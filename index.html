@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>WebGazer Image Eye Tracking</title><link rel="stylesheet" href="style.css"><script defer src="app.js?v=1.1.1-en"></script></head>
+<body><main>
+<header><p class="eyebrow">WEBCAM GAZE LAB</p><h1>Image Eye Tracking</h1><p>Calibrate your gaze, view an image, and record your gaze estimates in the same browser window. This page does not upload your image, camera feed, or gaze data.</p></header>
+<section class="panel" aria-label="Test controls">
+<div class="controls"><div><label for="file">1. Choose an image</label><button id="choose" type="button">Browse images</button><input id="file" type="file" hidden accept="image/png,image/jpeg,image/webp,image/gif,image/bmp,image/avif"></div><button id="camera" type="button">2. Enable camera</button><button id="calibrate" type="button" disabled>3. Calibrate (9 points)</button><button id="record" type="button" class="primary" disabled>4. Start recording</button><button id="download" type="button" disabled>Export CSV</button></div>
+<div class="options"><label for="duration">Recording duration (seconds) <input id="duration" type="number" min="3" max="120" step="1" value="15"></label><label><input id="showDot" type="checkbox"> Show live gaze point (debugging)</label><label><input id="showRecorded" type="checkbox" checked> Show recorded points after the trial</label></div>
+<p class="hint">Valid estimates: <output id="count">0</output> · Inside image: <output id="inside">0</output> · Time left: <output id="remaining">–</output></p>
+<p id="status" role="status">Choose a static image, then enable your camera.</p></section>
+<section id="stage" aria-label="Image test area"><p id="empty">Your image will appear here.</p><div id="surface" hidden><img id="stimulus" alt="Image used for the eye-tracking test" draggable="false"><canvas id="points" aria-hidden="true"></canvas></div><span id="dot" aria-hidden="true" hidden></span></section>
+<footer>Keep your head and browser window still while recording. Press Esc to stop early. Webcam gaze estimates are intended for prototypes and pilot tests.</footer>
+</main><div id="calLayer" role="dialog" aria-modal="true" aria-labelledby="calHint" hidden><p id="calHint"></p><button id="target" type="button" aria-label="Current calibration target"></button><button id="cancelCal" type="button">Cancel calibration</button></div></body></html>
