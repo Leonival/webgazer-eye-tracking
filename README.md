@@ -1,4 +1,4 @@
-# WebGazer Image Eye Tracking | English edition
+# WebGazer Image Eye Tracking
 
 A static website for recording webcam-based gaze estimates while viewing an image. No build step or backend is required. WebGazer 3.5.3 and its MediaPipe face model load from jsDelivr. The page does not upload images, camera frames, or gaze data and does not use the microphone. The CDN receives standard requests for library and model assets.
 
